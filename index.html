@@ -1,20 +1,72 @@
-<html>
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-    <title>Đề thi minh họa</title>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Nhập Số</title>
+    <style>
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .form-container input {
+            width: 30%;
+            margin: 10px;
+            padding: 8px;
+            text-align: center;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-<center>
-    <table border="0">
-        <tr>
-		<th><iframe src="https://drive.google.com/file/d/1-1IC5Eu9GleoLfztCsX2cED-aIj1C5Bv/preview" width="900" height="600" frameborder="0" marginheight="0" marginwidth="0">Đang tải…</iframe>
-		</th>
-            	<th>
-		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeBYi5rY_zK5ozFGSpD_D4KsbfF7WgusdNP-s40l6CPOvmtKg/viewform?usp=sf_link" width="400" height="580" frameborder="0" marginheight="0" marginwidth="0">Đang tải…</iframe>
-		<center><font color="blue">Teacher: Trinh Cao </font></center>
-		</th>
-        </tr>
-    </table>
-</center>
+
+    <div class="form-container">
+        <!-- 9 ô nhập số -->
+        <input type="number" id="input1" placeholder="Số 1">
+        <input type="number" id="input2" placeholder="Số 2">
+        <input type="number" id="input3" placeholder="Số 3">
+        <input type="number" id="input4" placeholder="Số 4">
+        <input type="number" id="input5" placeholder="Số 5">
+        <input type="number" id="input6" placeholder="Số 6">
+        <input type="number" id="input7" placeholder="Số 7">
+        <input type="number" id="input8" placeholder="Số 8">
+        <input type="number" id="input9" placeholder="Số 9">
+    </div>
+
+    <button onclick="checkValues()">Kiểm Tra</button>
+
+    <div class="message" id="message">Chúc mừng! Bạn đã nhập đúng tất cả giá trị.</div>
+
+    <script>
+        function checkValues() {
+            // Các giá trị đúng cho từng ô (5, 6, 5, 2, 3, 4, 4, 5, 9)
+            const correctValues = [5, 6, 5, 2, 3, 4, 4, 5, 9];
+            
+            // Lấy giá trị từ các ô input
+            let inputs = [];
+            for (let i = 1; i <= 9; i++) {
+                inputs.push(parseInt(document.getElementById('input' + i).value));
+            }
+
+            // Kiểm tra nếu tất cả giá trị đều đúng
+            const isCorrect = inputs.every((value, index) => value === correctValues[index]);
+
+            // Hiển thị thông báo nếu đúng
+            if (isCorrect) {
+                document.getElementById('message').style.display = 'block';
+            } else {
+                document.getElementById('message').style.display = 'none';
+            }
+        }
+    </script>
+
 </body>
 </html>
