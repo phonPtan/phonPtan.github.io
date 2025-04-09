@@ -82,6 +82,7 @@
         <input type="number" id="input4" placeholder="Số 4">
         <input type="number" id="input5" placeholder="Số 5">
         <input type="number" id="input6" placeholder="Số 6">
+        <input type="number" id="input6" placeholder="Số 7">
     </div>
     <audio id="celebrationSound" src="https://dictionary.cambridge.org/vi/media/english/uk_pron/u/ukc/ukcon/ukconfu017.mp3" preload="auto"></audio>
     <button onclick="checkValues()">Kiểm Tra</button>
@@ -92,11 +93,11 @@
     <script>
         function checkValues() {
             // Các giá trị đúng cho từng ô (5, 6, 5, 2, 3, 4, 4, 5, 9)
-            const correctValues = [1, 3, 2, 6, 3, 6];
+            const correctValues = [1, 3, 2, 4, 9, 3, 6];
             
             // Lấy giá trị từ các ô input
             let inputs = [];
-            for (let i = 1; i <= 6; i++) {
+            for (let i = 1; i <= 7; i++) {
                 inputs.push(parseInt(document.getElementById('input' + i).value));
             }
             // Kiểm tra nếu tất cả giá trị đều đúng
